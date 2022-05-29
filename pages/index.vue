@@ -7,7 +7,7 @@
             <div>
               <img class="home_category_img" src="../asset/cach-lam-nen-thom-14.jpg" alt="" width="100%">
               <div class="home_category_img_title">
-                Nến thơm cảm xúc okkookkokokokko
+                Nến thơm cảm xúc 
               </div>
             </div>
           </div>
