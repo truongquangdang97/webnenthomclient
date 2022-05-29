@@ -16,7 +16,7 @@
     </div> -->
     <div class="row">
       <div class="end">
-        © 2021 thechillinghome.com | All Rights Reserved
+        © 2021 thechillinghome.com | All Rights Reserved update
       </div>
     </div>
   </div>
