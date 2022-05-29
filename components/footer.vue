@@ -5,7 +5,7 @@
         <img src="../asset/logo1.svg" alt="" width="200px">
       </div>
     </div>
-    <div class="row">
+    <!-- <div class="row">
       <div class="menu">
         <div class="menu-class">Chính sách bảo mật </div>
         <div class="menu-class">Chính sách đổi trả </div>
@@ -13,7 +13,7 @@
         <div class="menu-class">Chính sách thanh toán </div>
         <div class="menu-class">Liên hệ mua hàng </div> 
       </div>
-    </div>
+    </div> -->
     <div class="row">
       <div class="end">
         © 2021 thechillinghome.com | All Rights Reserved

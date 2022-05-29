@@ -8,13 +8,14 @@
           <b><slot name="product"></slot> </b>
           <b><slot name="title"></slot> </b>
           <b><slot name="xxx"></slot> </b>
+
         </div>
         <div class="model-body">
           <slot name="Content"> </slot>
         </div>
         <div class="model-footer" :class="parent">
           <slot class="model-footer-slot" name="model-footer"></slot>
-          <button class="btn btn-model" @click="closeModel()">Close</button>
+          <!-- <button class="btn btn-model" @click="closeModel()">Close</button> -->
         </div>
       </div>
     </div>

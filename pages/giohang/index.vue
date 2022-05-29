@@ -5,7 +5,7 @@
           <table class="table">
               <thead>
                   <tr>
-                      <!-- <th>Mã sản phẩm</th> -->
+                      <th>Mã đơn hàng</th>
                       <th>Tên sản phẩm </th>
                       <th>Ảnh</th>
                       <th>Giá</th>
@@ -15,7 +15,7 @@
               </thead>
               <tbody>
                   <tr v-for="(item,index) in dataCartItem " :key="index">
-                        <!-- <th>{{item.id}}</th> -->
+                        <th>{{item.id.shoppingCartId}}</th>
                       <th>{{item.productName}}</th>
                       <th>{{item.productThumbnail}}</th>
                       <th>{{item.unitPrice}}</th>
@@ -39,16 +39,31 @@ export default {
     methods:{
         callApiCartItem() {
         axios
-          .get("http://localhost:8080/api/v1/cartItems", {params: {shoppingCartId: 'e02e928b-9daa-45d4-b760-aca62e4ac02b'}})
+          .get("http://localhost:8080/api/v1/cartItems")
           .then((response) => {
-            this.dataCartItem = response.data;
+            this.dataCartItem = response.data.content;
             console.log(this.dataCartItem)
           });
       },
+      productWithToken(){
+      let token = sessionStorage.getItem("token");
+      console.log(token)
+      if( token ){
+        window.axios = require('axios')
+        window.axios.defaults.headers.common['Authorization'] = 'Bearer ' + token;
+         this.callApiCartItem()
+      } else{
+        this.$router.push("/login")
+      }
+    },
+      
     },
     created(){
         this.callApiCartItem()
-    }
+    },
+     mounted(){
+      this.productWithToken();  
+  },
 }
 </script>
 

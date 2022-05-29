@@ -21,10 +21,5 @@ export default {
 }
 </script>
 <style>
-.between{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
+
 </style>

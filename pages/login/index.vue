@@ -28,7 +28,6 @@ export default {
             window.axios = require('axios')
             sessionStorage.setItem('token',response.data.accessToken);
             console.log(sessionStorage.getItem('token'))
-            //  window.axios.defaults.headers.common['Authorization'] = 'Bearer ' + response.data.accessToken;
           });
         }
     }
