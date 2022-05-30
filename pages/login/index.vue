@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import axios from "axios";
+// import axios from "axios";
 export default {
     data(){
         return{
@@ -20,15 +20,18 @@ export default {
         }
     },
     methods:{
+        // login(){
+        //      axios
+        //   .post("http://localhost:8080/api/v1/login",this.account)
+        //   .then((response) => {
+        //     console.log(response.data.accessToken)
+        //     window.axios = require('axios')
+        //     sessionStorage.setItem('token',response.data.accessToken);
+        //     console.log(sessionStorage.getItem('token'))
+        //   });
+        // }
         login(){
-             axios
-          .post("http://localhost:8080/api/v1/login",this.account)
-          .then((response) => {
-            console.log(response.data.accessToken)
-            window.axios = require('axios')
-            sessionStorage.setItem('token',response.data.accessToken);
-            console.log(sessionStorage.getItem('token'))
-          });
+          this.$store.dispatch('authenticateUser',this.account)
         }
     }
 }

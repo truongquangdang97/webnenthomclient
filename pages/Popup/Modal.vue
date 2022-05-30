@@ -14,7 +14,7 @@
           <slot name="Content"> </slot>
         </div>
         <div class="model-footer" :class="parent">
-          <slot class="model-footer-slot" name="model-footer"></slot>
+          <slot class="model-footer-slot" name="footer"></slot>
           <!-- <button class="btn btn-model" @click="closeModel()">Close</button> -->
         </div>
       </div>
@@ -193,14 +193,16 @@ export default {
   overflow-y: auto;
 }
 .model-footer {
-  display: flex;
+  text-align: center;
+      margin-left: 25px;
+  /* display: flex;
   flex-wrap: wrap;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: flex-end;
+  flex-shrink: 0; */
+  /* align-items: center; */
+  /* justify-content: flex-end; */
 
   padding: 0.75rem;
-  border-top: 1px solid #1e8cfa;
+  /* border-top: 1px solid #1e8cfa; */
 }
 .btn {
   display: inline-block;

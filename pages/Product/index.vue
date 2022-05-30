@@ -37,13 +37,20 @@
             <div class="totalAddToCart">
               <span class="addToCartMinus" @click="plusMinus(-1)">
                 -</span>
-                <span class="addToCartPlusMinusTotal">{{ totalAddCart }}</span>
-                <span class="addToCartPlus" @click="plusMinus(1)">+</span>
+              <span class="addToCartPlusMinusTotal">{{ totalAddCart }}</span>
+              <span class="addToCartPlus" @click="plusMinus(1)">+</span>
             </div>
+            <p></p>
+            
 
           </div>
+          
         </div>
 
+      </template>
+  
+      <template  v-slot:footer>
+        <button class="btn btn-danger">Them vào giỏ hàng</button>
       </template>
     </modal>
 
@@ -83,6 +90,7 @@ import modal from "../Popup/Modal.vue"
 
 // import axios from "axios";
 export default {
+  middleware: "router-log",
   components: {
     modal
   },
@@ -103,9 +111,9 @@ export default {
   //     this.callApiShoppingCart()
 
   //   },
-  //   mounted() {
-  //     this.productWithToken();
-  //   },
+  // mounted() {
+  //   this.productWithToken();
+  // },
   methods: {
     showModal() {
       this.showModal1 = true
@@ -117,17 +125,17 @@ export default {
 
 
       if (val > 0) {
-        this.totalAddCart ++
-      }else{
-        
-        if(this.totalAddCart==0){
-          this.totalAddCart=0
+        this.totalAddCart++
+      } else {
+
+        if (this.totalAddCart == 0) {
+          this.totalAddCart = 0
         }
-        this.totalAddCart --
+        this.totalAddCart--
       }
       console.log(val)
       console.log(this.totalAddCart)
-    }
+    },
     //     callApiShoppingCart() {
     //       axios
     //         .get("http://localhost:8080/api/v1/shopping-cart", { params: { userId: this.productAdd.userId } })
@@ -144,17 +152,17 @@ export default {
     //           this.productAdd.cartItemDTOSet = response.data
     //         });
     //     },
-    //     productWithToken() {
-    //       let token = sessionStorage.getItem("token");
-    //       console.log(token)
-    //       if (token) {
-    //         window.axios = require('axios')
-    //         window.axios.defaults.headers.common['Authorization'] = 'Bearer ' + token;
-    //         this.callApiProduct()
-    //       } else {
-    //         this.$router.push("/login")
-    //       }
-    //     },
+    // productWithToken() {
+    //   let token = sessionStorage.getItem("token");
+    //   console.log(token)
+    //   if (token) {
+    //     window.axios = require('axios')
+    //     window.axios.defaults.headers.common['Authorization'] = 'Bearer ' + token;
+    //     this.callApiProduct()
+    //   } else {
+    //     this.$router.push("/login")
+    //   }
+    // },
     //     callApiProduct() {
     //       let token = sessionStorage.getItem("token");
     //       axios
